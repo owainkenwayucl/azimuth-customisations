@@ -30,8 +30,8 @@
 - name: Install compilers
   ansible.builtin.dnf:
     name:
-    - g++
-    - gfortran
+    - gcc-c++
+    - gcc-gfortran
     - patch
     - bzip2
     - make
