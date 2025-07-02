@@ -46,7 +46,7 @@ sudo dnf install -y ansible
 This will produce output like this:
 
 ```
-[azimuth@owaink-testcluster-login-0 ansible-management]$ ansible-playbook -i inventory.ini tools.yaml
+[azimuth@owaink-testcluster-login-0 slurm-cluster]$ ansible-playbook -i inventory.ini tools.yaml
 
 PLAY [all] *************************************************************************************************************************************************
 
