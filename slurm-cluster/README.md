@@ -33,7 +33,7 @@ Host *
 	StrictHostKeyChecking accept-new
 ```
 
-to `~/.ssh/config` on the login node.
+to `~/.ssh/config` on the login node. Make sure the permissions of that file are 600 (`chmod 600 ~/.ssh/config`).
 
 3. Install ansible on your login node:
 
@@ -91,6 +91,8 @@ Although some of yours will say changed. Ansible is idempotent and I've already 
 
 The `tools.yaml` playbook runs two roles (`roles/tools` and `roles/python312`) which install some helpful tools (`vim`, `screen` etc) and compilers, as well as Python 3.12 which you can invoke by running `python3.12` on all the nodes.
 
+If you want to add additional packages, look in `roles/tools/tasks/tools.yaml` to see how to add them to playbook and re-run `ansible-playbook -i inventory.ini tools.yaml`.
+
 # Dangerous playbooks
 
-Thee `update.yaml` playbook will update your nodes. This will break the OpenMPI installation. `reboot.yaml` will reboot the compute nodes only (not the login node).
+Thee `update.yaml` playbook will update the OS install your nodes. This will break the OpenMPI installation. `reboot.yaml` will reboot the compute nodes only (not the login node).
