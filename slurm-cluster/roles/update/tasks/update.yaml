@@ -1,0 +1,7 @@
+- name: Update packages
+  ansible.builtin.dnf:
+    name: "*"
+    state: latest
+    allowerasing: true
+  become: true
+  become_user: root
