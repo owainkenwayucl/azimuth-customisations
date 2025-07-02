@@ -1,3 +1,2 @@
 ---
 - import_tasks: update.yaml
-- import_tasks: reboot.yaml
