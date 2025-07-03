@@ -2,6 +2,6 @@
   ansible.builtin.dnf:
     name: "*"
     state: latest
-    allowerasing: true
+    best: false
   become: true
   become_user: root
